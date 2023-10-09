@@ -5,7 +5,6 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-
   },
   parserOptions: {
     ecmaVersion: 6,
@@ -20,11 +19,9 @@ module.exports = {
     'array-callback-return': ['error', { allowImplicit: true }],
     'block-scoped-var': 'error',
     complexity: ['off', 20],
-    'class-methods-use-this': ['error', {
-      exceptMethods: [],
-    }],
+    'class-methods-use-this': ['error', { exceptMethods: [] }],
     'consistent-return': 'error',
-    curly: ['error', 'multi-line'],
+    curly: 'error',
     'default-case': ['error', { commentPattern: '^no default$' }],
     'default-case-last': 'error',
     'default-param-last': 'error',
@@ -47,9 +44,8 @@ module.exports = {
         'methods',
       ],
     }],
-
     'no-empty-pattern': 'error',
-    'no-empty-static-block': 'off',
+    'no-empty-static-block': 'error',
     'no-eq-null': 'off',
     'no-eval': 'error',
     'no-extend-native': 'error',

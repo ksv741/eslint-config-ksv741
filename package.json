@@ -8,7 +8,6 @@
   },
   "description": "",
   "devDependencies": {
-    "confusing-browser-globals": "^1.0.11",
     "eslint": "^7.32.0 || ^8.2.0"
   },
   "engines": {
