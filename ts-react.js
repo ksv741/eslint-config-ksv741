@@ -14,12 +14,14 @@ module.exports = {
         ...reactSettings['import/resolver'].node,
         extensions: [
           ...reactSettings['import/resolver'].node.extensions,
+          '.ts',
           '.tsx'
         ]
       }
     },
     'import/extensions': [
       ...reactSettings['import/extensions'],
+      '.ts',
       '.tsx'
     ],
   },
@@ -30,6 +32,7 @@ module.exports = {
       reactRules['import/extensions'][1],
       {
         ...reactRules['import/extensions'][2],
+        'ts': 'never',
         'tsx': 'never',
       },
     ],
@@ -37,7 +40,8 @@ module.exports = {
       ...reactFilenameExtensionRule[1],
       'extensions': [
         ...reactFilenameExtensionRule[1].extensions,
-        '.tsx',
+        '.ts',
+        '.tsx'
       ],
     }],
     'react/require-default-props': 'off'
