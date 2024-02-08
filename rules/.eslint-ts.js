@@ -11,7 +11,7 @@ module.exports = {
   },
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.d.ts'],
+      '@typescript-eslint/parser': ['.ts', '.d.ts', '.tsx'],
     },
     'import/resolver': {
       ...importSettings['import/resolver'],
@@ -20,7 +20,8 @@ module.exports = {
         extensions: [
           ...importSettings['import/resolver'].node.extensions,
           '.ts',
-          '.d.ts'
+          '.d.ts',
+          '.tsx'
         ],
       },
       typescript: {
@@ -28,7 +29,7 @@ module.exports = {
         project: 'tsconfig.json',
       },
     },
-    'import/extensions': [...importSettings['import/extensions'], '.ts', '.d.ts'],
+    'import/extensions': [...importSettings['import/extensions'], '.ts', '.d.ts', '.tsx'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
   },
   rules: {
@@ -128,6 +129,7 @@ module.exports = {
       {
         ...importsRules['import/extensions'][2],
         ts: 'never',
+        tsx: 'never',
       },
     ],
     'import/no-extraneous-dependencies': [
