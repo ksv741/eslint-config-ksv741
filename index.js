@@ -16,5 +16,12 @@ module.exports = {
       files: ['**/*.tsx'],
       extends: [require.resolve('./ts-react')],
     },
+    {
+      files: [
+        '**/__tests__/**/*.[jt]s?(x)',
+        '**/?(*.)+(spec|test).[jt]s?(x)'
+      ],
+      extends: [require.resolve('./js-ts-jest')],
+    },
   ],
 };

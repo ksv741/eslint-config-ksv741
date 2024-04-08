@@ -12,6 +12,7 @@ module.exports = {
       'mjs': 'never',
       'cjs': 'never',
       'js': 'never',
+      'jsx': 'never',
     }],
     'import/first': 'error',
     'import/group-exports': 'off',
@@ -107,10 +108,10 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.mjs', '.cjs', '.js', '.json'],
+        extensions: ['.mjs', '.cjs', '.js', '.jsx', '.json'],
       },
     },
-    'import/extensions': ['.mjs', '.cjs', '.js', '.json'],
+    'import/extensions': ['.mjs', '.cjs', '.jsx', '.json'],
     'import/core-modules': [],
     'import/ignore': [
       'node_modules',
