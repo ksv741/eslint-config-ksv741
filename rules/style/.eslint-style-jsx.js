@@ -56,5 +56,6 @@ module.exports = {
       'logical': 'parens-new-line',
       'prop': 'parens-new-line',
     }],
+    "@stylistic/jsx-function-call-newline": ["error", "multiline"]
   }
 }
