@@ -55,6 +55,10 @@ module.exports = {
       'submit': true,
       'reset': false,
     }],
+    "react/checked-requires-onchange-or-readonly": ['error', {
+      "ignoreMissingProperties": false,
+      "ignoreExclusiveCheckedAttribute": false,
+    }],
     'react/default-props-match-prop-types': ['error', {
       'allowRequiredDefaults': false,
     }],
@@ -111,7 +115,7 @@ module.exports = {
       ],
     }],
     'react/jsx-first-prop-new-line': 'off',
-    'react/jsx-fragments': ['error', 'syntax' ],
+    'react/jsx-fragments': ['error', 'syntax'],
     'react/jsx-handler-names': ['off', {
       'eventHandlerPrefix': 'handle',
       'eventHandlerPropPrefix': 'on',
