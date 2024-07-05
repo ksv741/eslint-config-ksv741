@@ -1,4 +1,11 @@
 # ksv741 Eslint Config
+### [0.0.3](https://github.com/ksv741/eslint-config-ksv741/compare/v0.0.2...v0.0.3) (2024-07-05)
+
+
+### 🚀 New Features
+
+* update packages ([f851425](https://github.com/ksv741/eslint-config-ksv741/commit/f851425c9ff0d74f2f376fa3bb5fbee2d460d586))
+
 ### 0.0.2 (2024-07-05)
 
 
