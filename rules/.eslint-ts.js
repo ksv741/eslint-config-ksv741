@@ -121,6 +121,9 @@ module.exports = {
     'require-await': 'off',
     '@typescript-eslint/require-await': baseRules['require-await'],
 
+    "consistent-return": "off",
+    "@typescript-eslint/consistent-return": baseRules['consistent-return'],
+
     '@typescript-eslint/return-await': ['error', 'in-try-catch'],
 
     'import/extensions': [
@@ -268,5 +271,6 @@ module.exports = {
     '@typescript-eslint/typedef': 'error',
     '@typescript-eslint/unbound-method': 'error',
     '@typescript-eslint/unified-signatures': 'error',
+    "@typescript-eslint/prefer-find": "error"
   },
 }
