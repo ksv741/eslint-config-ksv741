@@ -1,4 +1,11 @@
 # ksv741 Eslint Config
+### [0.0.4](https://github.com/ksv741/eslint-config-ksv741/compare/v0.0.3...v0.0.4) (2024-07-05)
+
+
+### 🛠️ Bug Fixes
+
+* remove ts from dev deps ([0dbe1f9](https://github.com/ksv741/eslint-config-ksv741/commit/0dbe1f995ee0856da7f1589e89dc3b5260954aa2))
+
 ### 0.0.3 (2024-07-05)
 
 
