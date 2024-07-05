@@ -1,4 +1,19 @@
 # ksv741 Eslint Config
+### 0.0.4 (2024-07-05)
+
+
+### 🚀 New Features
+
+* add github actions ([4e38a6f](https://github.com/ksv741/eslint-config-ksv741/commit/4e38a6fef61144b8a8afc3d70c66d2ed82edc80b))
+* add jest ruleset ([139a4a6](https://github.com/ksv741/eslint-config-ksv741/commit/139a4a6766a593d9fbc27a504c24bc9e4b5c6e5a))
+* update packages ([b619377](https://github.com/ksv741/eslint-config-ksv741/commit/b61937756639d07e22ce76cf912935c99b482a40))
+* upgrade yarn, add linting packages ([a738e8c](https://github.com/ksv741/eslint-config-ksv741/commit/a738e8c415c6b91610128e04dd591bf4a1bbd43e))
+
+
+### 🛠️ Bug Fixes
+
+* remove ts from dev deps ([1c5b2d4](https://github.com/ksv741/eslint-config-ksv741/commit/1c5b2d4d1eeda33dbf6e6fbd747230da196797ec))
+
 ### 0.0.3 (2024-07-05)
 
 
