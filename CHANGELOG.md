@@ -1,4 +1,16 @@
 # ksv741 Eslint Config
+## [0.1.0](https://github.com/ksv741/eslint-config-ksv741/compare/v0.0.3...v0.1.0) (2024-11-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* not support eslint 8 versions and lower
+
+### 🚀 New Features
+
+* add eslint 9 support, update dependencies ([1f77e63](https://github.com/ksv741/eslint-config-ksv741/commit/1f77e6369fecf8e166aa1e444fd386bb56e22d09))
+* update dev dependencies ([a0e7a9d](https://github.com/ksv741/eslint-config-ksv741/commit/a0e7a9d3596437eb3cc3f8148ef2b00bfa64a619))
+
 ### [0.0.3](https://github.com/ksv741/eslint-config-ksv741/compare/v0.0.2...v0.0.3) (2024-07-05)
 
 
