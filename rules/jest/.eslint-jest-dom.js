@@ -1,11 +1,6 @@
+const jestDom = require('eslint-plugin-jest-dom');
+
 module.exports = {
-  env: {
-    jest: true,
-  },
-  plugins: [
-    'jest-dom',
-  ],
-  extends: [
-    'plugin:jest-dom/recommended',
-  ],
-}
+  name: 'jest-dom',
+  ...jestDom.configs['flat/recommended'],
+};

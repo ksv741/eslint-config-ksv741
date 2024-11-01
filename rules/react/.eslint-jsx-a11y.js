@@ -1,33 +1,37 @@
+const jsxA11y = require('eslint-plugin-jsx-a11y');
+const react = require('eslint-plugin-react');
+
 module.exports = {
-  plugins: [
-    'jsx-a11y',
-    'react'
-  ],
+  name: 'jsx-a11y',
+  plugins: {
+    'jsx-a11y': jsxA11y,
+    react,
+  },
   rules: {
     'jsx-a11y/alt-text': ['error', {
-      'elements': [
+      elements: [
         'img',
         'object',
         'area',
         'input[type="image"]',
       ],
-      'img': [],
-      'object': [],
-      'area': [],
+      img: [],
+      object: [],
+      area: [],
       'input[type="image"]': [],
     }],
     'jsx-a11y/anchor-ambiguous-text': 'off',
     'jsx-a11y/anchor-has-content': ['error', {
-      'components': [],
+      components: [],
     }],
     'jsx-a11y/anchor-is-valid': ['error', {
-      'components': [
+      components: [
         'Link',
       ],
-      'specialLink': [
+      specialLink: [
         'to',
       ],
-      'aspects': [
+      aspects: [
         'noHref',
         'invalidHref',
         'preferButton',
@@ -37,19 +41,19 @@ module.exports = {
     'jsx-a11y/aria-props': 'error',
     'jsx-a11y/aria-proptypes': 'error',
     'jsx-a11y/aria-role': ['error', {
-      'ignoreNonDOM': false,
+      ignoreNonDOM: false,
     }],
     'jsx-a11y/aria-unsupported-elements': 'error',
     'jsx-a11y/autocomplete-valid': ['error', {
-      'inputComponents': [],
+      inputComponents: [],
     }],
     'jsx-a11y/click-events-have-key-events': 'error',
     'jsx-a11y/control-has-associated-label': ['error', {
-      'labelAttributes': [
+      labelAttributes: [
         'label',
       ],
-      'controlComponents': [],
-      'ignoreElements': [
+      controlComponents: [],
+      ignoreElements: [
         'audio',
         'canvas',
         'embed',
@@ -58,7 +62,7 @@ module.exports = {
         'tr',
         'video',
       ],
-      'ignoreRoles': [
+      ignoreRoles: [
         'grid',
         'listbox',
         'menu',
@@ -70,48 +74,48 @@ module.exports = {
         'tree',
         'treegrid',
       ],
-      'depth': 5,
+      depth: 5,
     }],
     'jsx-a11y/heading-has-content': ['error', {
-      'components': [],
+      components: [],
     }],
     'jsx-a11y/html-has-lang': 'error',
     'jsx-a11y/iframe-has-title': 'error',
     'jsx-a11y/img-redundant-alt': 'error',
     'jsx-a11y/interactive-supports-focus': 'error',
     'jsx-a11y/label-has-associated-control': ['error', {
-      'labelComponents': [],
-      'labelAttributes': [],
-      'controlComponents': [],
-      'assert': 'both',
-      'depth': 25,
+      labelComponents: [],
+      labelAttributes: [],
+      controlComponents: [],
+      assert: 'both',
+      depth: 25,
     }],
     'jsx-a11y/lang': 'error',
     'jsx-a11y/media-has-caption': ['error', {
-      'audio': [],
-      'video': [],
-      'track': [],
+      audio: [],
+      video: [],
+      track: [],
     }],
     'jsx-a11y/mouse-events-have-key-events': 'error',
     'jsx-a11y/no-access-key': 'error',
     'jsx-a11y/no-aria-hidden-on-focusable': 'error',
     'jsx-a11y/no-autofocus': ['error', {
-      'ignoreNonDOM': true,
+      ignoreNonDOM: true,
     }],
     'jsx-a11y/no-distracting-elements': ['error', {
-      'elements': [
+      elements: [
         'marquee',
         'blink',
-      ]
+      ],
     }],
     'jsx-a11y/no-interactive-element-to-noninteractive-role': ['error', {
-      'tr': [
+      tr: [
         'none',
         'presentation',
       ],
     }],
     'jsx-a11y/no-noninteractive-element-interactions': ['error', {
-      'handlers': [
+      handlers: [
         'onClick',
         'onMouseDown',
         'onMouseUp',
@@ -121,7 +125,7 @@ module.exports = {
       ],
     }],
     'jsx-a11y/no-noninteractive-element-to-interactive-role': ['error', {
-      'ul': [
+      ul: [
         'listbox',
         'menu',
         'menubar',
@@ -130,7 +134,7 @@ module.exports = {
         'tree',
         'treegrid',
       ],
-      'ol': [
+      ol: [
         'listbox',
         'menu',
         'menubar',
@@ -139,29 +143,29 @@ module.exports = {
         'tree',
         'treegrid',
       ],
-      'li': [
+      li: [
         'menuitem',
         'option',
         'row',
         'tab',
         'treeitem',
       ],
-      'table': [
+      table: [
         'grid',
       ],
-      'td': [
+      td: [
         'gridcell',
       ],
     }],
     'jsx-a11y/no-noninteractive-tabindex': ['error', {
-      'tags': [],
-      'roles': [
+      tags: [],
+      roles: [
         'tabpanel',
       ],
     }],
     'jsx-a11y/no-redundant-roles': 'error',
     'jsx-a11y/no-static-element-interactions': ['error', {
-      'handlers': [
+      handlers: [
         'onClick',
         'onMouseDown',
         'onMouseUp',
@@ -175,5 +179,5 @@ module.exports = {
     'jsx-a11y/role-supports-aria-props': 'error',
     'jsx-a11y/scope': 'error',
     'jsx-a11y/tabindex-no-positive': 'error',
-  }
-}
+  },
+};

@@ -1,8 +1,6 @@
+const testingLibrary = require('eslint-plugin-testing-library');
+
 module.exports = {
-  plugins: [
-    'testing-library',
-  ],
-  extends: [
-    'plugin:testing-library/react',
-  ],
-}
+  name: 'jest-testing-library',
+  ...testingLibrary.configs['flat/react'],
+};

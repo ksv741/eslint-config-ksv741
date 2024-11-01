@@ -1,8 +1,6 @@
+const jest = require('eslint-plugin-jest');
+
 module.exports = {
-  plugins: [
-    'jest',
-  ],
-  extends: [
-    'plugin:jest/recommended'
-  ],
-}
+  name: 'jest',
+  ...jest.configs['flat/recommended'],
+};

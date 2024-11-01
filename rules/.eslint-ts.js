@@ -1,13 +1,18 @@
-const { rules: baseRules } = require('./.eslint-js.js');
-const { rules: importsRules, settings: importSettings } = require('./.eslint-import.js');
+const tsEslint = require('typescript-eslint');
+const { rules: baseRules } = require('./.eslint-js');
+const { rules: importsRules, settings: importSettings } = require('./.eslint-import');
 
 module.exports = {
-  plugins: [
-    '@typescript-eslint'
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: 'tsconfig.json',
+  name: 'ts-base',
+  plugins: {
+    '@typescript-eslint': tsEslint.plugin,
+  },
+  languageOptions: {
+    parser: tsEslint.parser,
+    parserOptions: {
+      projectService: true,
+      project: 'tsconfig.json',
+    },
   },
   settings: {
     'import/parsers': {
@@ -21,12 +26,12 @@ module.exports = {
           ...importSettings['import/resolver'].node.extensions,
           '.ts',
           '.d.ts',
-          '.tsx'
+          '.tsx',
         ],
       },
       typescript: {
-        'alwaysTryTypes': true,
-        project: 'tsconfig.json',
+        alwaysTryTypes: true,
+        project: process.cwd(),
       },
     },
     'import/extensions': [...importSettings['import/extensions'], '.ts', '.d.ts', '.tsx'],
@@ -40,7 +45,6 @@ module.exports = {
     'no-dupe-keys': 'off',
     'no-func-assign': 'off',
     'no-import-assign': 'off',
-    'no-new-symbol': 'off',
     'no-obj-calls': 'off',
     'no-setter-return': 'off',
     'no-this-before-super': 'off',
@@ -65,8 +69,7 @@ module.exports = {
       {
         selector: 'typeLike',
         format: ['PascalCase'],
-      },
-    ],
+      }],
 
     'default-param-last': 'off',
     '@typescript-eslint/default-param-last': baseRules['default-param-last'],
@@ -83,13 +86,9 @@ module.exports = {
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': baseRules['no-empty-function'],
 
-
     'no-implied-eval': 'off',
     'no-new-func': 'off',
     '@typescript-eslint/no-implied-eval': baseRules['no-implied-eval'],
-
-    'no-loss-of-precision': 'off',
-    '@typescript-eslint/no-loss-of-precision': baseRules['no-loss-of-precision'],
 
     'no-loop-func': 'off',
     '@typescript-eslint/no-loop-func': baseRules['no-loop-func'],
@@ -104,7 +103,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': baseRules['no-shadow'],
 
     'no-throw-literal': 'off',
-    '@typescript-eslint/no-throw-literal': baseRules['no-throw-literal'],
+    '@typescript-eslint/only-throw-error': baseRules['no-throw-literal'], // TODO
 
     'no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-expressions': baseRules['no-unused-expressions'],
@@ -121,8 +120,8 @@ module.exports = {
     'require-await': 'off',
     '@typescript-eslint/require-await': baseRules['require-await'],
 
-    "consistent-return": "off",
-    "@typescript-eslint/consistent-return": baseRules['consistent-return'],
+    'consistent-return': 'off',
+    '@typescript-eslint/consistent-return': baseRules['consistent-return'],
 
     '@typescript-eslint/return-await': ['error', 'in-try-catch'],
 
@@ -141,12 +140,13 @@ module.exports = {
         ...importsRules['import/no-extraneous-dependencies'][1],
         devDependencies: importsRules[
           'import/no-extraneous-dependencies'
-          ][1].devDependencies.reduce((result, devDep) => {
+        ][1].devDependencies.reduce((result, devDep) => {
           const toAppend = [devDep];
           const devDepWithTs = devDep.replace(/\bjs(x?)\b/g, 'ts$1');
           if (devDepWithTs !== devDep) {
             toAppend.push(devDepWithTs);
           }
+
           return [...result, ...toAppend];
         }, []),
       },
@@ -157,7 +157,9 @@ module.exports = {
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/ban-tslint-comment': 'error',
-    '@typescript-eslint/ban-types': 'error',
+    '@typescript-eslint/no-restricted-types': 'error',
+    '@typescript-eslint/no-unsafe-function-type': 'error',
+    '@typescript-eslint/no-wrapper-object-types': 'error',
     '@typescript-eslint/class-literal-property-style': 'error',
 
     'class-methods-use-this': 'off',
@@ -171,7 +173,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/consistent-type-exports': 'error',
     '@typescript-eslint/consistent-type-imports': ['error', {
-      prefer: 'type-imports'
+      prefer: 'type-imports',
     }],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
@@ -192,7 +194,6 @@ module.exports = {
     '@typescript-eslint/no-duplicate-enum-values': 'error',
     '@typescript-eslint/no-duplicate-type-constituents': 'error',
     '@typescript-eslint/no-dynamic-delete': 'error',
-    '@typescript-eslint/no-empty-interface': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/no-extraneous-class': 'error',
@@ -235,8 +236,8 @@ module.exports = {
     '@typescript-eslint/no-unsafe-return': 'error',
     '@typescript-eslint/no-unsafe-unary-minus': 'error',
     '@typescript-eslint/no-useless-empty-export': 'error',
-    '@typescript-eslint/no-useless-template-literals': 'error',
-    '@typescript-eslint/no-var-requires': 'error',
+    '@typescript-eslint/no-deprecated': 'error',
+    '@typescript-eslint/no-empty-object-type': 'error',
     '@typescript-eslint/non-nullable-type-assertion-style': 'off',
     '@typescript-eslint/parameter-properties': 'error',
     '@typescript-eslint/prefer-as-const': 'error',
@@ -259,7 +260,6 @@ module.exports = {
     '@typescript-eslint/prefer-regexp-exec': 'error',
     '@typescript-eslint/prefer-return-this-type': 'error',
     '@typescript-eslint/prefer-string-starts-ends-with': 'error',
-    '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/promise-function-async': 'error',
     '@typescript-eslint/require-array-sort-compare': 'error',
     '@typescript-eslint/restrict-plus-operands': 'error',
@@ -271,6 +271,6 @@ module.exports = {
     '@typescript-eslint/typedef': 'error',
     '@typescript-eslint/unbound-method': 'error',
     '@typescript-eslint/unified-signatures': 'error',
-    "@typescript-eslint/prefer-find": "error"
+    '@typescript-eslint/prefer-find': 'error',
   },
-}
+};

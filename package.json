@@ -26,30 +26,37 @@
   "devDependencies": {
     "@commitlint/cli": "19.2.1",
     "@commitlint/config-conventional": "19.1.0",
-    "eslint": "8.56.0",
+    "eslint": "9.13.0",
     "husky": "9.0.11",
-    "standard-version": "9.5.0"
+    "standard-version": "9.5.0",
+    "typescript": "5.6.3"
   },
   "main": "index.js",
+  "files": [
+    "rules",
+    "configs",
+    "index.js"
+  ],
   "engines": {
     "node": ">=16.13.0"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "2.3.0",
-    "@typescript-eslint/eslint-plugin": "7.15.0",
-    "@typescript-eslint/parser": "7.15.0",
-    "eslint-import-resolver-typescript": "3.6.1",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-jest": "28.6.0",
+    "@eslint/eslintrc": "3.1.0",
+    "@stylistic/eslint-plugin": "2.10.0",
+    "eslint-import-resolver-typescript": "3.6.3",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jest": "28.8.3",
     "eslint-plugin-jest-dom": "5.4.0",
     "eslint-plugin-jest-formatting": "3.1.0",
-    "eslint-plugin-jsx-a11y": "6.9.0",
-    "eslint-plugin-react": "7.34.3",
-    "eslint-plugin-react-hooks": "4.6.2",
-    "eslint-plugin-testing-library": "6.2.2"
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react": "7.37.2",
+    "eslint-plugin-react-hooks": "5.0.0",
+    "eslint-plugin-testing-library": "6.4.0",
+    "globals": "15.11.0",
+    "typescript-eslint": "8.12.2"
   },
   "peerDependencies": {
-    "eslint": ">=8.56.0",
+    "eslint": "^9.13.0",
     "typescript": ">=4.2.2"
   },
   "peerDependenciesMeta": {
@@ -59,15 +66,16 @@
   },
   "exports": {
     ".": "./index.js",
-    "./js-base": "./js-base.js",
-    "./js-react": "./js-react.js",
-    "./ts-react": "./ts-react.js",
-    "./ts-base": "./ts-base.js",
-    "./jest": "./js-ts-jest.js"
+    "./js-base": "./configs/js-base.js",
+    "./js-react": "./configs/js-react.js",
+    "./ts-react": "./configs/ts-react.js",
+    "./ts-base": "./configs/ts-base.js",
+    "./jest": "./configs/js-ts-jest.js"
   },
   "scripts": {
     "release": "standard-version",
     "release:rc": "standard-version --prerelease rc",
-    "prepare": "husky"
+    "prepare": "husky",
+    "inspect": "npx @eslint/config-inspector@latest"
   }
 }
