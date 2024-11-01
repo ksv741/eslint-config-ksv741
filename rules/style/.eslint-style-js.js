@@ -1,7 +1,10 @@
+const stylistic = require('@stylistic/eslint-plugin');
+
 module.exports = {
-  plugins: [
-    '@stylistic'
-  ],
+  name: 'style-js',
+  plugins: {
+    '@stylistic': stylistic,
+  },
   rules: {
     '@stylistic/array-bracket-newline': ['error', 'consistent'],
     '@stylistic/array-bracket-spacing': ['error', 'never'],
@@ -72,7 +75,6 @@ module.exports = {
       ObjectExpression: 1,
       ImportDeclaration: 1,
       flatTernaryExpressions: false,
-      ignoredNodes: ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXFragment', 'JSXOpeningFragment', 'JSXClosingFragment', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'],
       ignoreComments: false,
     }],
     '@stylistic/indent-binary-ops': ['error', 2],

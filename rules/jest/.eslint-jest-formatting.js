@@ -1,8 +1,10 @@
+const jestFormatting = require('eslint-plugin-jest-formatting');
+const { FlatCompat } = require('@eslint/eslintrc');
+
+const compat = new FlatCompat();
+const config = compat.config(jestFormatting.configs.recommended);
+
 module.exports = {
-  plugins: [
-    'jest-formatting',
-  ],
-  extends: [
-    'plugin:jest-formatting/recommended',
-  ],
-}
+  name: 'jest-formatting',
+  ...config.reduce((res, cur) => ({ ...res, ...cur }), {}),
+};

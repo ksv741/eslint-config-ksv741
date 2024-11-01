@@ -35,16 +35,22 @@ pnpm add --save-dev eslint-config-ksv741
 Для подключения - добавьте конфиг в файл конфигурации `Eslint`
 
 ```js
-extends: ["ksv741"]
+// eslint.config.js
+
+const config = require('eslint-config-ksv741');
+
+module.exports = [
+  ...config,
+];
 ```
 
 Доступны следующие конфиги:
-* `ksv741/js-base` - содержит правила для файлов `JavaScript`
-* `ksv741/js-react` - содержит правила для файлов `JavaScript` и правила для `JSX` и `React`
-* `ksv741/ts-base` - содержит правила для файлов `JavaScript` и правила для файлов `TypeScript`
-* `ksv741/ts-react` - содержит правила для файлов `JavaScript`, `TypeScript`, `JSX` и `React`
-* `ksv741/jest` - содержит правила для `Jest`
-* `ksv741` - содержит правила для файлов `JavaScript`, `TypeScript`, `JSX`, `React`, `Jest` - Рекомендуется использовать
+* `js-base` - содержит правила для файлов `JavaScript`
+* `js-react` - содержит правила для файлов `JavaScript` и правила для `JSX` и `React`
+* `ts-base` - содержит правила для файлов `JavaScript` и правила для файлов `TypeScript`
+* `ts-react` - содержит правила для файлов `JavaScript`, `TypeScript`, `JSX` и `React`
+* `jest` - содержит правила для `Jest`
+* `default` - содержит правила для файлов `JavaScript`, `TypeScript`, `JSX`, `React`, `Jest` - Рекомендуется использовать
 
 
 
@@ -53,57 +59,46 @@ extends: ["ksv741"]
 Можно точечно переопределить для каких файлов использовать определенный конфиг
 
 ```js
-overrides: [
+// eslint.config.js
+
+const jsBase = require('eslint-config-ksv741/js-base');
+const jsReact = require('eslint-config-ksv741/js-react');
+const tsBase = require('eslint-config-ksv741/ts-base');
+const tsReact = require('eslint-config-ksv741/ts-react');
+const jest = require('eslint-config-ksv741/jest');
+
+module.exports = [
     {
       files: ["*.js"],
-      extends: ["ksv741/js-base"]
+      ...jsBase
     },
     {
       files: ["*.jsx"],
-      extends: ["ksv741/js-react"]
+      ...jsReact
     },
     {
       files: ["*.ts"],
-      extends: ["ksv741/ts-base"]
+      ...tsBase
     },
     {
       files: ["*.tsx"],
-      extends: ["ksv741/ts-react"]
+      ...tsReact
     },
     {
       files: [
         "**/__tests__/**/*.[jt]s?(x)",
         "**/?(*.)+(spec|test).[jt]s?(x)"
       ],
-      extends: ["ksv741/jest"]
+      ...jest
     }
   ]
 ```
 
 ### Кастомизация
 
-Для файлов, использующих конфигурацию `ksv741/ts-base` или `ksv741/ts-react` по умолчанию используется [`@typescript-eslint/parser`](https://www.npmjs.com/package/@typescript-eslint/parser) и [`eslint-import-resolver-typescript`](https://www.npmjs.com/package/eslint-import-resolver-typescript).
+Для файлов, использующих конфигурацию `ts-base` или `ts-react` по умолчанию используется [`@typescript-eslint/parser`](https://www.npmjs.com/package/@typescript-eslint/parser) и [`eslint-import-resolver-typescript`](https://www.npmjs.com/package/eslint-import-resolver-typescript).
 Но вы можете это переопределить, используя настройки плагина [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import?tab=readme-ov-file#importparsers)  
-Например, добавим настройку для использования [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser) и [eslint-import-resolver-webpack](https://www.npmjs.com/package/eslint-import-resolver-webpack)
 
-```js
-{
-  extends: ["ksv741"],
-  parser: "@babel/eslint-parser",
-  parserOptions: {
-    babelOptions: {
-      configFile: ".babelrc.js"
-    }
-  },
-  settings: {
-    "import/resolver": {
-      webpack: {
-        config: "webpack.config.js"
-      }
-    }
-  }
-}
-```
 
 **ВНИМАНИЕ**  
 Для проектов использующих `TypeScript` предустановлены [`@typescript-eslint/parser`](https://www.npmjs.com/package/@typescript-eslint/parser) и [`eslint-import-resolver-typescript`](https://www.npmjs.com/package/eslint-import-resolver-typescript).

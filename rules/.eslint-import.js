@@ -1,7 +1,10 @@
+const eslintImport = require('eslint-plugin-import');
+
 module.exports = {
-  plugins: [
-    'import',
-  ],
+  name: 'import',
+  plugins: {
+    import: eslintImport,
+  },
   rules: {
     'import/consistent-type-specifier-style': ['off', 'prefer-top-level'],
     'import/default': 'error',
@@ -9,15 +12,15 @@ module.exports = {
     'import/export': 'error',
     'import/exports-last': 'off',
     'import/extensions': ['error', 'ignorePackages', {
-      'mjs': 'never',
-      'cjs': 'never',
-      'js': 'never',
-      'jsx': 'never',
+      mjs: 'never',
+      cjs: 'never',
+      js: 'never',
+      jsx: 'never',
     }],
     'import/first': 'error',
     'import/group-exports': 'off',
     'import/max-dependencies': ['warn', {
-      'max': 15,
+      max: 15,
     }],
     'import/named': 'error',
     'import/namespace': 'off',
@@ -25,16 +28,16 @@ module.exports = {
     'import/no-absolute-path': 'error',
     'import/no-amd': 'error',
     'import/no-anonymous-default-export': ['error', {
-      'allowArray': false,
-      'allowArrowFunction': false,
-      'allowAnonymousClass': false,
-      'allowAnonymousFunction': false,
-      'allowLiteral': false,
-      'allowObject': false,
+      allowArray: false,
+      allowArrowFunction: false,
+      allowAnonymousClass: false,
+      allowAnonymousFunction: false,
+      allowLiteral: false,
+      allowObject: false,
     }],
     'import/no-commonjs': 'off',
     'import/no-cycle': ['error', {
-      'maxDepth': '∞',
+      maxDepth: '∞',
     }],
     'import/no-default-export': 'off',
     'import/no-deprecated': 'warn',
@@ -42,7 +45,7 @@ module.exports = {
     'import/no-dynamic-require': 'error',
     'import/no-empty-named-blocks': 'error',
     'import/no-extraneous-dependencies': ['error', {
-      'devDependencies': [
+      devDependencies: [
         'test/**',
         'tests/**',
         'spec/**',
@@ -66,10 +69,10 @@ module.exports = {
         '**/karma.conf.js',
         '**/.eslintrc.js',
       ],
-      'optionalDependencies': false,
+      optionalDependencies: false,
     }],
     'import/no-import-module-exports': ['error', {
-      'exceptions': [],
+      exceptions: [],
     }],
     'import/no-internal-modules': 'off',
     'import/no-mutable-exports': 'error',
@@ -85,16 +88,16 @@ module.exports = {
     'import/no-self-import': 'error',
     'import/no-unassigned-import': 'off',
     'import/no-unresolved': ['error', {
-      'commonjs': true,
-      'caseSensitive': true,
+      commonjs: true,
+      caseSensitive: true,
     }],
     'import/no-unused-modules': 'off',
     'import/no-useless-path-segments': ['error', {
-      'commonjs': true,
+      commonjs: true,
     }],
     'import/no-webpack-loader-syntax': 'error',
     'import/order': ['error', {
-      'groups': [
+      groups: [
         [
           'builtin',
           'external',
@@ -118,4 +121,4 @@ module.exports = {
       '\\.(coffee|scss|css|less|hbs|svg|json)$',
     ],
   },
-}
+};

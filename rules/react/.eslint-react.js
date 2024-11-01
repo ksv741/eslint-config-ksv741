@@ -1,20 +1,25 @@
-const { rules: baseRules } = require('../.eslint-js');
+const react = require('eslint-plugin-react');
+
 const { rules: importRules, settings: importSettings } = require('../.eslint-import');
+const { rules: baseRules } = require('../.eslint-js');
 
 module.exports = {
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  name: 'react',
+  languageOptions: {
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+      ecmaVersion: 'latest',
     },
-    ecmaVersion: 'latest',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: {
+    react,
+  },
   rules: {
     'class-methods-use-this': [baseRules['class-methods-use-this'][0], {
       ...baseRules['class-methods-use-this'][1],
-      'exceptMethods': [
+      exceptMethods: [
         ...baseRules['class-methods-use-this'][1]?.exceptMethods,
         'render',
         'getInitialState',
@@ -38,69 +43,65 @@ module.exports = {
       importRules['import/extensions'][1],
       {
         ...importRules['import/extensions'][2],
-        'jsx': 'never',
-      },
-    ],
+        jsx: 'never',
+      }],
     'import/no-nodejs-modules': 'error',
     'react/boolean-prop-naming': ['off', {
-      'propTypeNames': [
+      propTypeNames: [
         'bool',
         'mutuallyExclusiveTrueProps',
       ],
-      'rule': '^(is|has)[A-Z]([A-Za-z0-9]?)+',
-      'message': '',
+      rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+',
+      message: '',
     }],
     'react/button-has-type': ['error', {
-      'button': true,
-      'submit': true,
-      'reset': false,
+      button: true,
+      submit: true,
+      reset: false,
     }],
-    "react/checked-requires-onchange-or-readonly": ['error', {
-      "ignoreMissingProperties": false,
-      "ignoreExclusiveCheckedAttribute": false,
+    'react/checked-requires-onchange-or-readonly': ['error', {
+      ignoreMissingProperties: false,
+      ignoreExclusiveCheckedAttribute: false,
     }],
     'react/default-props-match-prop-types': ['error', {
-      'allowRequiredDefaults': false,
+      allowRequiredDefaults: false,
     }],
     'react/destructuring-assignment': ['error', 'always'],
     'react/display-name': ['off', {
-      'ignoreTranspilerName': false,
+      ignoreTranspilerName: false,
     }],
     'react/forbid-component-props': ['off', {
-      'forbid': [],
+      forbid: [],
     }],
     'react/forbid-dom-props': ['off', {
-      'forbid': [],
+      forbid: [],
     }],
     'react/forbid-elements': ['off', {
-      'forbid': [],
+      forbid: [],
     }],
     'react/forbid-foreign-prop-types': ['warn', {
-      'allowInPropTypes': true,
+      allowInPropTypes: true,
     }],
     'react/forbid-prop-types': ['error', {
-      'forbid': [
+      forbid: [
         'any',
         'array',
         'object',
       ],
-      'checkContextTypes': true,
-      'checkChildContextTypes': true,
+      checkContextTypes: true,
+      checkChildContextTypes: true,
     }],
     'react/function-component-definition': ['error', {
-      'namedComponents': [
-        'arrow-function',
-      ],
-      'unnamedComponents': 'function-expression',
+      namedComponents: 'arrow-function',
+      unnamedComponents: 'arrow-function',
     }],
     'react/hook-use-state': 'error',
     'react/iframe-missing-sandbox': 'error',
     'react/jsx-boolean-value': ['error',
       'never',
       {
-        'always': [],
-      },
-    ],
+        always: [],
+      }],
     'react/jsx-child-element-spacing': 'off',
     'react/jsx-closing-bracket-location': 'off',
     'react/jsx-closing-tag-location': 'off',
@@ -109,7 +110,7 @@ module.exports = {
     'react/jsx-curly-spacing': 'off',
     'react/jsx-equals-spacing': 'off',
     'react/jsx-filename-extension': ['error', {
-      'extensions': [
+      extensions: [
         '.jsx',
         '.js',
       ],
@@ -117,8 +118,8 @@ module.exports = {
     'react/jsx-first-prop-new-line': 'off',
     'react/jsx-fragments': ['error', 'syntax'],
     'react/jsx-handler-names': ['off', {
-      'eventHandlerPrefix': 'handle',
-      'eventHandlerPropPrefix': 'on',
+      eventHandlerPrefix: 'handle',
+      eventHandlerPropPrefix: 'on',
     }],
     'react/jsx-indent': 'off',
     'react/jsx-indent-props': 'off',
@@ -127,36 +128,36 @@ module.exports = {
     'react/jsx-max-props-per-line': 'off',
     'react/jsx-newline': 'off',
     'react/jsx-no-bind': ['error', {
-      'ignoreRefs': true,
-      'allowArrowFunctions': true,
-      'allowFunctions': false,
-      'allowBind': false,
-      'ignoreDOMComponents': true,
+      ignoreRefs: true,
+      allowArrowFunctions: true,
+      allowFunctions: false,
+      allowBind: false,
+      ignoreDOMComponents: true,
     }],
     'react/jsx-no-comment-textnodes': 'error',
     'react/jsx-no-constructed-context-values': 'error',
     'react/jsx-no-duplicate-props': ['error', {
-      'ignoreCase': false,
+      ignoreCase: false,
     }],
     'react/jsx-no-leaked-render': 'error',
     'react/jsx-no-literals': 'off',
     'react/jsx-no-script-url': ['error', [
       {
-        'name': 'Link',
-        'props': [
+        name: 'Link',
+        props: [
           'to',
         ],
       },
     ]],
     'react/jsx-no-target-blank': ['error', {
-      'enforceDynamicLinks': 'always',
+      enforceDynamicLinks: 'always',
     }],
     'react/jsx-no-undef': 'error',
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-pascal-case': ['error', {
-      'allowAllCaps': true,
-      'ignore': [],
+      allowAllCaps: true,
+      ignore: [],
     }],
     'react/jsx-props-no-multi-spaces': 'off',
     'react/jsx-props-no-spreading': 'off',
@@ -165,13 +166,13 @@ module.exports = {
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'react/jsx-wrap-multilines': ['error', {
-      'declaration': 'parens-new-line',
-      'assignment': 'parens-new-line',
-      'return': 'parens-new-line',
-      'arrow': 'parens-new-line',
-      'condition': 'parens-new-line',
-      'logical': 'parens-new-line',
-      'prop': 'parens-new-line',
+      declaration: 'parens-new-line',
+      assignment: 'parens-new-line',
+      return: 'parens-new-line',
+      arrow: 'parens-new-line',
+      condition: 'parens-new-line',
+      logical: 'parens-new-line',
+      prop: 'parens-new-line',
     }],
     'react/no-access-state-in-setstate': 'error',
     'react/no-adjacent-inline-elements': 'off',
@@ -202,8 +203,8 @@ module.exports = {
     'react/no-unstable-nested-components': 'error',
     'react/no-unused-class-component-methods': 'error',
     'react/no-unused-prop-types': ['error', {
-      'customValidators': [],
-      'skipShapeProps': true,
+      customValidators: [],
+      skipShapeProps: true,
     }],
     'react/no-unused-state': 'error',
     'react/no-will-update-set-state': 'error',
@@ -211,25 +212,25 @@ module.exports = {
     'react/prefer-exact-props': 'error',
     'react/prefer-read-only-props': 'off',
     'react/prefer-stateless-function': ['error', {
-      'ignorePureComponents': true,
+      ignorePureComponents: true,
     }],
     'react/prop-types': ['error', {
-      'ignore': [],
-      'customValidators': [],
-      'skipUndeclared': false,
+      ignore: [],
+      customValidators: [],
+      skipUndeclared: false,
     }],
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': ['error', {
-      'forbidDefaultForRequired': true,
-      'functions': 'ignore',
+      forbidDefaultForRequired: true,
+      functions: 'ignore',
     }],
     'react/require-optimization': ['off', {
-      'allowDecorators': [],
+      allowDecorators: [],
     }],
     'react/require-render-return': 'error',
     'react/self-closing-comp': 'off',
     'react/sort-comp': ['error', {
-      'order': [
+      order: [
         'static-variables',
         'static-methods',
         'instance-variables',
@@ -243,8 +244,8 @@ module.exports = {
         'everything-else',
         'rendering',
       ],
-      'groups': {
-        'lifecycle': [
+      groups: {
+        lifecycle: [
           'displayName',
           'propTypes',
           'contextTypes',
@@ -271,14 +272,14 @@ module.exports = {
           'componentDidCatch',
           'componentWillUnmount',
         ],
-        'rendering': [
+        rendering: [
           '/^render.+$/',
           'render',
         ],
       },
     }],
     'react/sort-default-props': ['error', {
-      'ignoreCase': false,
+      ignoreCase: false,
     }],
     'react/sort-prop-types': 'off',
     'react/state-in-constructor': ['error', 'always'],
@@ -308,9 +309,9 @@ module.exports = {
         ],
       },
     },
-    'react': {
-      'pragma': 'React',
-      'version': 'detect',
+    react: {
+      pragma: 'React',
+      version: 'detect',
     },
   },
-}
+};
