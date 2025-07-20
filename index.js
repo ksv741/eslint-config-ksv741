@@ -1,8 +1,8 @@
-const jsBase = require('./configs/js-base');
-const jsReact = require('./configs/js-react');
-const jsTsJest = require('./configs/js-ts-jest');
-const tsBase = require('./configs/ts-base');
-const tsReact = require('./configs/ts-react');
+import tsReact from './configs/ts-react.js';
+import jsBase from './configs/js-base.js';
+import jsReact from './configs/js-react.js';
+import jsTsJest from './configs/js-ts-jest.js';
+import tsBase from './configs/ts-base.js';
 
 const jestConfig = jsTsJest.map((config) => ({
   ...config,
@@ -32,10 +32,12 @@ const tsReactConfig = tsReact.map((config) => ({
   files: ['**/*.tsx'],
 }));
 
-module.exports = [
+const config = [
   ...jsBaseConfig,
   ...tsBaseConfig,
   ...jsReactConfig,
   ...tsReactConfig,
   ...jestConfig,
 ];
+
+export default config;

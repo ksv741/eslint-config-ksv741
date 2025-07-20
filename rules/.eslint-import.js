@@ -1,6 +1,6 @@
-const eslintImport = require('eslint-plugin-import');
+import eslintImport from 'eslint-plugin-import';
 
-module.exports = {
+export default {
   name: 'import',
   plugins: {
     import: eslintImport,
@@ -107,6 +107,7 @@ module.exports = {
     }],
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'off',
+    'import/enforce-node-protocol-usage': ['error', 'always'],
   },
   settings: {
     'import/resolver': {

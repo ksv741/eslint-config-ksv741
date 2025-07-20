@@ -1,9 +1,11 @@
-const react = require('eslint-plugin-react');
+import react from 'eslint-plugin-react';
+import importConfig from '../.eslint-import.js';
+import jsBaseConfig from '../.eslint-js.js';
 
-const { rules: importRules, settings: importSettings } = require('../.eslint-import');
-const { rules: baseRules } = require('../.eslint-js');
+const { rules: importRules, settings: importSettings } = importConfig;
+const { rules: baseRules } = jsBaseConfig;
 
-module.exports = {
+export default {
   name: 'react',
   languageOptions: {
     parserOptions: {
@@ -20,7 +22,7 @@ module.exports = {
     'class-methods-use-this': [baseRules['class-methods-use-this'][0], {
       ...baseRules['class-methods-use-this'][1],
       exceptMethods: [
-        ...baseRules['class-methods-use-this'][1]?.exceptMethods,
+        ...baseRules['class-methods-use-this'][1].exceptMethods,
         'render',
         'getInitialState',
         'getDefaultProps',
@@ -293,6 +295,7 @@ module.exports = {
     }],
     'react/style-prop-object': 'error',
     'react/void-dom-elements-no-children': 'error',
+    'react/jsx-props-no-spread-multi': 'error',
   },
   settings: {
     'import/extensions': [

@@ -1,6 +1,6 @@
-const stylistic = require('@stylistic/eslint-plugin');
+import stylistic from '@stylistic/eslint-plugin';
 
-module.exports = {
+export default {
   name: 'style-js',
   plugins: {
     '@stylistic': stylistic,
@@ -184,14 +184,13 @@ module.exports = {
     }, {
       allowSingleLineBlocks: true,
     }],
-    '@stylistic/padding-line-between-statements': ["error",
-      { blankLine: "always", prev: "*", next: "return" },
-      { blankLine: "always", prev: "*", next: "for" },
-      { blankLine: "always", prev: "for", next: "*" },
-      { blankLine: "always", prev: "for", next: "*" },
-      { blankLine: "always", prev: "throw", next: "*" },
-      { blankLine: "always", prev: "*", next: "throw" },
-    ],
+    '@stylistic/padding-line-between-statements': ['error',
+      { blankLine: 'always', prev: '*', next: 'return' },
+      { blankLine: 'always', prev: '*', next: 'for' },
+      { blankLine: 'always', prev: 'for', next: '*' },
+      { blankLine: 'always', prev: 'for', next: '*' },
+      { blankLine: 'always', prev: 'throw', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'throw' }],
     '@stylistic/quote-props': ['error', 'as-needed', {
       keywords: false,
       unnecessary: true,
@@ -238,5 +237,7 @@ module.exports = {
     '@stylistic/wrap-iife': ['error', 'outside', { functionPrototypeMethods: false }],
     '@stylistic/wrap-regex': 'error',
     '@stylistic/yield-star-spacing': ['error', 'after'],
-  }
-}
+    '@stylistic/line-comment-position': ['off', { position: 'above' }],
+    '@stylistic/multiline-comment-style': ['off', 'starred-block'],
+  },
+};

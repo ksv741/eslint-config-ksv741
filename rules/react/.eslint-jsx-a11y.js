@@ -1,7 +1,7 @@
-const jsxA11y = require('eslint-plugin-jsx-a11y');
-const react = require('eslint-plugin-react');
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import react from 'eslint-plugin-react';
 
-module.exports = {
+export default {
   name: 'jsx-a11y',
   plugins: {
     'jsx-a11y': jsxA11y,
