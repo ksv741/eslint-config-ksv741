@@ -1,8 +1,12 @@
-const tsEslint = require('typescript-eslint');
-const { rules: baseRules } = require('./.eslint-js');
-const { rules: importsRules, settings: importSettings } = require('./.eslint-import');
+import tsEslint from 'typescript-eslint';
 
-module.exports = {
+import jsBaseConfig from './.eslint-js.js';
+import importConfig from './.eslint-import.js';
+
+const { rules: baseRules } = jsBaseConfig;
+const { rules: importsRules, settings: importSettings } = importConfig;
+
+export default {
   name: 'ts-base',
   plugins: {
     '@typescript-eslint': tsEslint.plugin,
@@ -272,5 +276,13 @@ module.exports = {
     '@typescript-eslint/unbound-method': 'error',
     '@typescript-eslint/unified-signatures': 'error',
     '@typescript-eslint/prefer-find': 'error',
+    '@typescript-eslint/no-misused-spread': 'error',
+    '@typescript-eslint/no-unnecessary-template-expression': 'error',
+    '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'error',
+    '@typescript-eslint/no-unnecessary-type-conversion': 'error',
+    '@typescript-eslint/no-unnecessary-type-parameters': 'error',
+    '@typescript-eslint/no-unsafe-type-assertion': 'error',
+    '@typescript-eslint/related-getter-setter-pairs': 'error',
+    '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
   },
 };

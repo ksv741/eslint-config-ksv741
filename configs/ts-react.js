@@ -1,10 +1,13 @@
-const { rules: reactRules, settings: reactSettings } = require('../rules/react/.eslint-react');
+import reactConfig from '../rules/react/.eslint-react.js';
+import jsReactConfig from './js-react.js'
+import tsBaseConfig from './ts-base.js'
 
+const { rules: reactRules, settings: reactSettings } = reactConfig;
 const reactFilenameExtensionRule = reactRules['react/jsx-filename-extension'];
 
-module.exports = [
-  ...require('./js-react'),
-  ...require('./ts-base'),
+export default  [
+  ...jsReactConfig,
+  ...tsBaseConfig,
   {
     name: 'react-settings',
     settings: {

@@ -1,6 +1,6 @@
-const testingLibrary = require('eslint-plugin-testing-library');
+import testingLibrary from 'eslint-plugin-testing-library';
 
-module.exports = {
+export default {
   name: 'jest-testing-library',
   ...testingLibrary.configs['flat/react'],
 };
