@@ -1,6 +1,6 @@
-const stylistic = require('@stylistic/eslint-plugin');
+import stylistic from '@stylistic/eslint-plugin';
 
-module.exports = {
+export default {
   name: 'style-jsx',
   plugins: {
     '@stylistic': stylistic,
@@ -59,5 +59,6 @@ module.exports = {
       prop: 'parens-new-line',
     }],
     '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
+    '@stylistic/jsx-pascal-case': ['error', { allowNamespace: true }],
   },
 };

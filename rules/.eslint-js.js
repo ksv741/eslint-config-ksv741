@@ -1,6 +1,6 @@
-const globals = require('globals');
+import globals from 'globals';
 
-module.exports = {
+export default {
   name: 'js-base',
   languageOptions: {
     parserOptions: {
@@ -123,7 +123,6 @@ module.exports = {
     }],
     'no-empty': 'error',
     'no-empty-character-class': 'error',
-    "no-useless-assignment": "error",
     'no-empty-function': ['error', {
       allow: [
         'arrowFunctions',
@@ -299,6 +298,7 @@ module.exports = {
     'no-ternary': 'off',
     'no-this-before-super': 'error',
     'no-throw-literal': 'error',
+    'no-unassigned-vars': 'error',
     'no-undef': 'error',
     'no-undef-init': 'error',
     'no-undefined': 'error',
@@ -334,6 +334,7 @@ module.exports = {
       classes: true,
       variables: true,
     }],
+    'no-useless-assignment': 'error',
     'no-useless-backreference': 'error',
     'no-useless-call': 'off',
     'no-useless-catch': 'error',
