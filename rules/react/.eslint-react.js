@@ -68,7 +68,7 @@ export default {
     'react/default-props-match-prop-types': ['error', {
       allowRequiredDefaults: false,
     }],
-    'react/destructuring-assignment': ['error', 'always'],
+    'react/destructuring-assignment': ['error', 'always', { ignoreClassFields: true, destructureInSignature: 'always' }],
     'react/display-name': ['off', {
       ignoreTranspilerName: false,
     }],
