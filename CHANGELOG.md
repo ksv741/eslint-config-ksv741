@@ -1,4 +1,21 @@
 # ksv741 Eslint Config
+## [0.3.0](https://github.com/ksv741/eslint-config-ksv741/compare/v0.0.2...v0.3.0) (2025-09-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* transform module from CommonJS to ESM
+* not support eslint 8 versions and lower
+
+### 🚀 New Features
+
+* add eslint 9 support, update dependencies ([23f1c08](https://github.com/ksv741/eslint-config-ksv741/commit/23f1c08611119e5aeb878fb07e53d36076e8db41))
+* add yarn cache ([bebbbc6](https://github.com/ksv741/eslint-config-ksv741/commit/bebbbc66635f74e38874de1c918efa3320f4e096))
+* update dependencies ([3a96653](https://github.com/ksv741/eslint-config-ksv741/commit/3a966536ad5e3353789ee6bdb22ce49830c61a2d))
+* update dependencies ([4bb4584](https://github.com/ksv741/eslint-config-ksv741/commit/4bb458460678362b018573a30460eacd5691536c))
+* update dev dependencies ([ee38a51](https://github.com/ksv741/eslint-config-ksv741/commit/ee38a51b60d0320f82f5c7212a47c7271869c0d8))
+* update packages ([ff18846](https://github.com/ksv741/eslint-config-ksv741/commit/ff18846be599762f5781bd8c6d1c0c2078a88b1e))
+
 ## [0.2.0](https://github.com/ksv741/eslint-config-ksv741/compare/v0.0.2...v0.2.0) (2025-07-20)
 
 
