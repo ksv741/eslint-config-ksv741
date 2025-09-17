@@ -32,7 +32,6 @@ export default {
     '@stylistic/jsx-one-expression-per-line': ['error', {
       allow: 'literal',
     }],
-    '@stylistic/jsx-props-no-multi-spaces': 'error',
     '@stylistic/jsx-quotes': ['error', 'prefer-double'],
     '@stylistic/jsx-self-closing-comp': 'off',
     '@stylistic/jsx-sort-props': ['error', {
