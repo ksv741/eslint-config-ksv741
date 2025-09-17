@@ -23,7 +23,7 @@
     "url": "https://github.com/ksv741/eslint-config-ksv741"
   },
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0-rc.0",
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
